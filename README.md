@@ -10,3 +10,4 @@ Show corresponding content
 JS focus 
 Mapping UI → data
 Avoiding repetition
+has something changed? 
