@@ -1,11 +1,35 @@
-body {
-    background-color: greenyellow;
+/* <!-- bro i don't really know what the .tab button is doing here man, i don't see in my html file man --> as i said i googled all these code, tried to read it and i got what i got and i didn't get what i didn't get, like i didn't really understand most part of this code */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
 }
 
-.tabs {
-    background-color: brown;
+/* Stle the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
 }
 
-.tab1 {
-    background-color: beige;
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solic #ccc;
+    border-top: none;
 }
