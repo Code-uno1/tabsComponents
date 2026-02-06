@@ -1,20 +1,28 @@
-function openTab(evt, tabNumber) {
-    // Declare all variables
-    var i, tabcontent, tablinks; // why did they use var and also this is kind of different from how you write code, isn't?
+// One listener. One place.
+const tabsContainer = document.querySelector(".tabs");
 
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++ ) {
-        tabcontent[i].style.display = "none";
+tabsContainer.addEventListener("click", (event) => {
+
+    // 1. Guard clause:
+    // If the clicked element is NOT a tab button, stop.
+    if (!event.target.classList.contains("tab-btn")) {
+        return;
     }
 
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace( " active", " "); // what is active here, is it a js thingy?
-    }
+    // 2. Remove active state from all buttons
+    document.querySelectorAll(".tab-btn")
+        .forEach(btn => btn.classList.remove("active"));
 
-    // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(tabNumber).style.display = "block";
-    evt.currentTarget.className += " active"; // is currentTarget also a js  thingy? 
-}
+    // 3. Remove active state from all contents
+    document.querySelectorAll(".tab-content")
+        .forEach(content => content.classList.remove("active"));
+
+    // 4. Activate clicked button
+    event.target.classList.add("active");
+
+    // 5. Mapping step:
+    const tabId = event.target.dataset.tab;
+
+    // 6. Activate corresponding content
+    document.getElementById(tabId).classList.add("active");
+});

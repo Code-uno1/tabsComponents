@@ -3,27 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tabs Component</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div id="tabs">
-        <button id="tab1" class="tablinks" onclick="openCity(event, 'Tab1')">Tab 1</button>
-        <button id="tab2" class="tablinks" onclick="openCity(event, 'Tab2')">Tab 2</button>
-        <button id="tab3" class="tablinks" onclick="openCity(event, 'Tab3')">Tab 3</button>
-        <div id="Tab1" class="tabcontent">
-            <h3>Tab1</h3>
+
+    <!-- Tabs container -->
+    <!-- This is just structure. No JS logic here. -->
+    <div class="tabs">
+
+        <div class="tab-buttons">
+            <!-- Tab buttons -->
+            <!-- data-tab stores WHICH content this button controls -->
+            <button class="tab-btn active" data-tab="tab1">Tab 1</button>
+            <button class="tab-btn" data-tab="tab2">Tab 2</button>
+            <button class="tab-btn" data-tab="tab3">Tab 3</button>
+        </div>
+
+        <!-- Tab content -->
+        <!-- IDs must match data-tab values -->
+        <div id="tab1" class="tab-content active">
+            <h3>Tab 1</h3>
             <p>This is Tab 1</p>
         </div>
-        <div id="Tab2" class="tabcontent">
-            <h3>Tab2</h3>
-            <p>This is Tab3</p>
+
+        <div id="tab2" class="tab-content">
+            <h3>Tab 2</h3>
+            <p>This is Tab 2</p>
         </div>
-        <div id="Tab3" class="tabcontent">
-            <h3>Tab3</h3>
-            <p>This is Tab3</p>
+
+        <div id="tab3" class="tab-content">
+            <h3>Tab 3</h3>
+            <p>This is Tab 3</p>
         </div>
+
     </div>
+
     <script src="index.js"></script>
 </body>
 </html>
